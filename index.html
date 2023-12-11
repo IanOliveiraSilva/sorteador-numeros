@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteador de Números</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container shadow-lg p-3 mb-5 bg-white rounded">
+        <h1 class="display-4 text-color1">Sorteador de Números</h1>
+
+        <div class="form-group">
+            <label for="numero1" class="text-color2">Número 1:</label>
+            <input type="number" id="numero1" class="form-control" placeholder="Digite o primeiro número" required>
+        </div>
+
+        <div class="form-group">
+            <label for="numero2" class="text-color3">Número 2:</label>
+            <input type="number" id="numero2" class="form-control" placeholder="Digite o segundo número" required>
+        </div>
+
+        <div class="form-group">
+            <label for="quantidade" class="text-color4">Quantidade de Números a Sortear:</label>
+            <input type="number" id="quantidade" class="form-control" placeholder="Digite a quantidade" required>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-color5" onclick="sortearNumero()">Sortear Número(s)</button>
+        <div id="result" class="mt-4 lead text-color6"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
