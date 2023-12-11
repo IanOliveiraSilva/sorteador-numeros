@@ -1,47 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorteador de Números</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
 
-    <div class="container shadow-lg p-3 mb-5 bg-white rounded">
-        <h1 class="display-4 text-color1">Sorteador de Números</h1>
+    <div class="container py-5 bg-light">
+        <button onclick="mudarIdioma('en')">English</button>
+        <button onclick="mudarIdioma('pt')">Português</button>
 
-        <div class="form-group">
-            <label for="numero1" class="text-color2">Número 1:</label>
-            <input type="number" id="numero1" class="form-control" placeholder="Digite o primeiro número" required>
+        <h1 class="display-4 text-center mb-4" data-traducao="titulo">Sorteador de Números</h1>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="numero1" class="form-label text-primary" data-traducao="labelNumero1">Número 1:</label>
+                    <input type="number" id="numero1" class="form-control border-primary" value="1" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="numero2" class="form-label text-primary" data-traducao="labelNumero2">Número 2:</label>
+                    <input type="number" id="numero2" class="form-control border-primary" value="10" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="quantidade" class="form-label text-primary" data-traducao="labelQuantidade">Quantidade
+                        de Números a Sortear:</label>
+                    <input type="number" id="quantidade" class="form-control border-primary" value="1" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="ordenacao" class="form-label text-primary" data-traducao="ordenação">Ordenação:</label>
+                    <select id="ordenacao" class="form-select border-primary">
+                        <option value="crescente" data-traducao="Crescente">Crescente</option>
+                        <option value="decrescente" data-traducao="Decrescente">Decrescente</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="permitirRepetidos" data-traducao="permitirRepetidos">Permitir Números Repetidos:</label>
+                    <input type="checkbox" id="permitirRepetidos" name="permitirRepetidos">
+                </div>
+
+                <button class="btn btn-lg btn-primary w-100 mb-3" data-traducao="sortearNumeros"
+                    onclick="sortearNumero()">Sortear Número(s)</button>
+
+                <button class="btn btn-lg btn-secondary w-100 mb-3" data-traducao="limparResultados"
+                    onclick="limparResultado()">Limpar
+                    Resultado</button>
+
+                <button class="btn btn-lg btn-secondary w-100 mb-3" data-traducao="reiniciar"
+                    onclick="reiniciar()">Reiniciar</button>
+
+                <button class="btn btn-lg btn-secondary w-100 mb-3" data-traducao="exportarHistoricos"
+                    onclick="exportarHistorico()">Exportar
+                    Histórico</button>
+
+                <div id="result" class="text-center fs-3 fw-bold" style="color: #991766;"></div>
+                
+                <div id="historico" class="text-center mt-4" style="color: #495057;"></div>
+            </div>
+
+
         </div>
-
-        <div class="form-group">
-            <label for="numero2" class="text-color3">Número 2:</label>
-            <input type="number" id="numero2" class="form-control" placeholder="Digite o segundo número" required>
-        </div>
-
-        <div class="form-group">
-            <label for="quantidade" class="text-color4">Quantidade de Números a Sortear:</label>
-            <input type="number" id="quantidade" class="form-control" placeholder="Digite a quantidade" required>
-        </div>
-
-        <div class="form-group">
-            <label for="ordenacao" class="text-color5">Ordenação:</label>
-            <select id="ordenacao" class="form-control">
-                <option value="crescente">Crescente</option>
-                <option value="decrescente">Decrescente</option>
-            </select>
-        </div>
-
-        <button class="btn btn-lg btn-primary btn-color6" onclick="sortearNumero()">Sortear Número(s)</button>
-        <div id="result" class="mt-4 lead text-color7"></div>
     </div>
 
     <script src="script.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="idiomas.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+
 </body>
+
+
 </html>
