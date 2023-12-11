@@ -7,7 +7,6 @@ function sortearNumero() {
     let ordenacao = document.getElementById('ordenacao').value;
     let permitirRepetidos = document.getElementById('permitirRepetidos').checked;
 
-
     if (isNaN(numero1) || isNaN(numero2) || isNaN(quantidade) || numero2 <= numero1) {
         alert('Por favor, insira números válidos e certifique-se de que o segundo número é maior que o primeiro.');
         return;
@@ -25,15 +24,22 @@ function sortearNumero() {
         } while (!permitirRepetidos && resultados.includes(resultado));
 
         resultados.push(resultado);
+        mostrarResultado(resultados, ordenacao);
     }
 
+    atualizarHistorico(resultados);
+}
+
+function mostrarResultado(resultados, ordenacao) {
     resultados.sort((a, b) => (ordenacao === 'crescente') ? a - b : b - a);
 
     let resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = 'Número(s) sorteado(s): ' + resultados.join(', ');
     resultDiv.classList.remove('fade-in');
-    resultDiv.innerText = 'Número(s) sorteado(s): ' + resultados.join(', ');
+
+    resultDiv.offsetHeight;
+
     resultDiv.classList.add('fade-in');
-    atualizarHistorico(resultados);
 }
 
 function limparResultado() {
@@ -41,30 +47,34 @@ function limparResultado() {
 }
 
 function atualizarHistorico(resultado) {
-    let historico = document.getElementById('historico');
-
-    let historicoCard = document.createElement('div');
-    historicoCard.classList.add('historico-card');
-
-    let icon = document.createElement('span');
-    icon.classList.add('icon');
-    icon.innerHTML = '<i class="bi bi-check-circle-fill"></i>';
-
-    let historicoText = document.createElement('p');
-    historicoText.innerHTML = `${icon.outerHTML} Sorteio anterior: ${resultado.join(', ')}`;
-
-    historicoCard.appendChild(historicoText);
-    historico.insertBefore(historicoCard, historico.firstChild);
-
     numerosSorteados = numerosSorteados.concat(resultado);
 
+    let historico = document.getElementById('historico');
+    historico.innerHTML = '';
+
+    let startIndex = Math.max(0, numerosSorteados.length - 5);
+
+    for (let i = startIndex; i < numerosSorteados.length; i++) {
+        let historicoCard = document.createElement('div');
+        historicoCard.classList.add('historico-card');
+
+        let icon = document.createElement('span');
+        icon.classList.add('icon');
+        icon.innerHTML = '<i class="bi bi-check-circle-fill"></i>';
+
+        let historicoText = document.createElement('p');
+        historicoText.innerHTML = `${icon.outerHTML} Sorteio anterior: ${numerosSorteados[i]}`;
+
+        historicoCard.appendChild(historicoText);
+        historico.appendChild(historicoCard);
+    }
 }
 
 
 function reiniciar() {
     document.getElementById('numero1').value = 1;
     document.getElementById('numero2').value = 10;
-    document.getElementById('quantidade').value = '';
+    document.getElementById('quantidade').value = '1';
 
     document.getElementById('permitirRepetidos').checked = false;
 

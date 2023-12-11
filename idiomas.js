@@ -14,7 +14,9 @@ const idiomas = {
         'sortearNumeros': 'Sortear número(s)',
         'limparResultados': 'Limpar resultado',
         'reiniciar': 'Reiniciar',
-        'exportarHistoricos': 'Exportar Histórico'
+        'exportarHistoricos': 'Exportar Histórico',
+        'english': 'Inglês',
+        'portugues': 'Português',
     },
     'en': {
         'titulo': 'Number Sorter',
@@ -31,7 +33,9 @@ const idiomas = {
         'limparResultados': 'Clear result',
         'sortearNumeros': 'Sort number',
         'reiniciar': 'Restart',
-        'exportarHistoricos': 'Export History'
+        'exportarHistoricos': 'Export History',
+        'english': 'English',
+        'portugues': 'Portuguese',
     }
 };
 
