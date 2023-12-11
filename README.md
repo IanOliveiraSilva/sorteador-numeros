@@ -35,7 +35,7 @@ Vá para o diretorio do projeto
 ### Remoto
 Para usar remotamente, basta acessar o link:
 
-  - [Sorteador de Números](https://ianoliveirasilva.github.io/Gerador-de-senhas/)
+  - [Sorteador de Números](https://ianoliveirasilva.github.io/sorteador-numeros/)
 
 
 ## Tecnologias Utilizadas
