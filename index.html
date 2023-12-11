@@ -27,8 +27,16 @@
             <input type="number" id="quantidade" class="form-control" placeholder="Digite a quantidade" required>
         </div>
 
-        <button class="btn btn-lg btn-primary btn-color5" onclick="sortearNumero()">Sortear Número(s)</button>
-        <div id="result" class="mt-4 lead text-color6"></div>
+        <div class="form-group">
+            <label for="ordenacao" class="text-color5">Ordenação:</label>
+            <select id="ordenacao" class="form-control">
+                <option value="crescente">Crescente</option>
+                <option value="decrescente">Decrescente</option>
+            </select>
+        </div>
+
+        <button class="btn btn-lg btn-primary btn-color6" onclick="sortearNumero()">Sortear Número(s)</button>
+        <div id="result" class="mt-4 lead text-color7"></div>
     </div>
 
     <script src="script.js"></script>
