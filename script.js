@@ -15,7 +15,7 @@ function sortearNumero() {
         alert('A quantidade de números a serem sorteados deve estar entre 1 e 100.');
         return;
     }
-
+    
     let resultados = [];
     for (let i = 0; i < quantidade; i++) {
         let resultado;
