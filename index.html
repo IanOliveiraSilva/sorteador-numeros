@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Sorteador de Números</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.css" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -15,54 +17,74 @@
 
     <div class="container py-5">
         <div class="text-end">
-            <button class="btn btn-secondary" onclick="mudarIdioma('en')" data-traducao="english">English</button>
-            <button class="btn btn-secondary" onclick="mudarIdioma('pt')" data-traducao="portugues">Português</button>
-            <button class="btn btn-secondary" onclick="mudarIdioma('fr')" data-traducao="frances">Francês</button>
+            <button class="btn btn-secondary btn-outline-primary" onclick="mudarIdioma('en')" data-traducao="english">English</button>
+            <button class="btn btn-secondary btn-outline-success" onclick="mudarIdioma('pt')" data-traducao="portugues">Português</button>
+            <button class="btn btn-secondary btn-outline-danger" onclick="mudarIdioma('fr')" data-traducao="frances">Francês</button>
         </div>
-    
-        <h1 class="display-4 text-center mb-4" data-traducao="titulo">Sorteador de Números</h1> 
+        
+        <h1 class="display-4 text-center mb-4" data-traducao="titulo">Sorteador de Números</h1>
 
         <div class="row justify-content-center">
+
             <div class="col-md-6">
                 <div class="mb-3">
                     <label for="numero1" class="form-label" data-traducao="labelNumero1">Número 1:</label>
-                    <input type="number" id="numero1" class="form-control" value="1" required>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-hash"></i></span>
+                        <input type="number" id="numero1" class="form-control" value="1" required>
+                    </div>
                 </div>
-    
+
                 <div class="mb-3">
                     <label for="numero2" class="form-label" data-traducao="labelNumero2">Número 2:</label>
-                    <input type="number" id="numero2" class="form-control" value="10" required>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-hash"></i></span>
+                        <input type="number" id="numero2" class="form-control" value="10" required>
+                    </div>
                 </div>
-    
+
                 <div class="mb-3">
-                    <label for="quantidade" class="form-label" data-traducao="labelQuantidade">Quantidade de Números a Sortear:</label>
-                    <input type="number" id="quantidade" class="form-control" value="1" required>
+                    <label for="quantidade" class="form-label" data-traducao="labelQuantidade">Quantidade de Números a
+                        Sortear:</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-calculator"></i></span>
+                        <input type="number" id="quantidade" class="form-control" value="1" required>
+                    </div>
                 </div>
-    
+
                 <div class="mb-3">
+                    
                     <label for="ordenacao" class="form-label" data-traducao="ordenacao">Ordenação:</label>
-                    <select id="ordenacao" class="form-select">
-                        <option value="crescente" data-traducao="Crescente">Crescente</option>
-                        <option value="decrescente" data-traducao="Decrescente">Decrescente</option>
-                    </select>
+                    <div class="input-group">
+                        <label class="input-group-text"><i class="bi bi-sort-alpha-up"></i></label>
+                        <select id="ordenacao" class="form-select">
+                            <option value="crescente" data-traducao="Crescente">Crescente</option>
+                            <option value="decrescente" data-traducao="Decrescente">Decrescente</option>
+                        </select>
+                        
+                    </div>
                 </div>
-    
+                
                 <div class="mb-3 form-check">
-                    <input type="checkbox" id="permitirRepetidos" class="bg-dark form-check-input" data-traducao="permitirRepetidos">
-                    <label class="form-check-label text-dark" for="permitirRepetidos">Permitir Números Repetidos</label>
+                    <input type="checkbox" id="permitirRepetidos" class="form-check-input bg-primary" data-traducao="permitirRepetidos">
+                    <label class="form-check-label text-black fw-bold" for="permitirRepetidos">Permitir Números Repetidos</label>
                 </div>
-    
-                <button class="btn btn-primary w-100 mb-3" data-traducao="sortearNumeros" onclick="sortearNumero()">Sortear Número(s)</button>
-                <button class="btn btn-secondary w-100 mb-3 " data-traducao="limparResultados" onclick="limparResultado()">Limpar Resultado</button>
-                <button class="btn btn-secondary w-100 mb-3" data-traducao="reiniciar" onclick="reiniciar()">Reiniciar</button>
-                <button class="btn btn-secondary w-100 mb-3" data-traducao="exportarHistoricos" onclick="exportarHistorico()">Exportar Histórico</button>
-    
+                
+                <button class="btn btn-primary w-100 mb-3" data-traducao="sortearNumeros"
+                    onclick="sortearNumero()">Sortear Número(s)</button>
+                <button class="btn btn-secondary w-100 mb-3 " data-traducao="limparResultados"
+                    onclick="limparResultado()">Limpar Resultado</button>
+                <button class="btn btn-secondary w-100 mb-3" data-traducao="reiniciar"
+                    onclick="reiniciar()">Reiniciar</button>
+                <button class="btn btn-secondary w-100 mb-3" data-traducao="exportarHistoricos"
+                    onclick="exportarHistorico()">Exportar Histórico</button>
+
                 <div id="result" class="text-center fs-3 fw-bold"></div>
                 <div id="historico" class="text-center mt-4"></div>
             </div>
         </div>
     </div>
-    
+
 
     <script src="script.js"></script>
     <script src="idiomas.js"></script>

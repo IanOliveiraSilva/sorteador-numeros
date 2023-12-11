@@ -1,8 +1,9 @@
 body {
-    background-color: #1a1a1a;
+    background-color: #000000;
     font-family: 'Arial', sans-serif;
     color: #fff;
     margin: 0;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .container {
@@ -11,56 +12,58 @@ body {
     border-radius: 15px;
     padding: 40px;
     margin-top: 30px;
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.container:hover {
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
-}
-
-
-.container:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-}
 
 .display-4 {
-    color: #331327;
+    color: #000000;
     text-align: center;
     margin-bottom: 20px;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
 }
+
 
 .form-label {
     color: #4a2a3a;
     font-weight: 600;
     margin-bottom: 8px;
     font-size: 1.1em;
+    transition: color 0.3s ease-in-out;
 }
 
 .form-control {
     border: 2px solid #6c757d;
     border-radius: 8px;
-    transition: border-color 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     padding: 10px;
     font-size: 1em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .form-control:focus {
     border-color: #0d6efd;
     outline: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .form-select {
     border: 2px solid #565857;
     border-radius: 8px;
-    transition: border-color 0.3s ease-in-out;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     padding: 10px;
     font-size: 1em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .form-select:focus {
     border-color: #0d6efd;
     outline: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
+
 
 .btn-primary {
     background-color: #0d6efd;
@@ -71,16 +74,19 @@ body {
     font-weight: bold;
     color: #fff;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .btn-primary:hover {
     background-color: #0b5ed7;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .btn-secondary {
     background-color: #000;
     color: #fff;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn-secondary:hover {
@@ -88,14 +94,19 @@ body {
     color: #000;
 }
 
+
 #result {
     color: #000;
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
+    transition: color 0.3s ease-in-out;
 }
 
+#result:hover {
+    color: #0d6efd;
+}
 
 @keyframes fadeIn {
     from {
@@ -110,7 +121,9 @@ body {
 
 .fade-in {
     animation: fadeIn 1s ease-in-out;
+    animation-fill-mode: both;
 }
+
 
 #historico .historico-card {
     background-color: #000000;
@@ -119,18 +132,27 @@ body {
     border-radius: 8px;
     padding: 15px;
     margin-bottom: 20px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #historico .historico-card:hover {
     transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 #historico .historico-card p {
     margin: 0;
+    font-size: 1.1em;
+    line-height: 1.6;
 }
 
 #historico .historico-card .icon {
     color: #ffffff;
     margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+#historico .historico-card:hover .icon {
+    color: #0d6efd;
 }
