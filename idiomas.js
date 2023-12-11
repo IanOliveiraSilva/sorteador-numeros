@@ -17,6 +17,7 @@ const idiomas = {
         'exportarHistoricos': 'Exportar Histórico',
         'english': 'Inglês',
         'portugues': 'Português',
+        'frances': 'Francês'
     },
     'en': {
         'titulo': 'Number Sorter',
@@ -36,6 +37,27 @@ const idiomas = {
         'exportarHistoricos': 'Export History',
         'english': 'English',
         'portugues': 'Portuguese',
+        'frances': 'French'
+    },
+    'fr': {
+        'titulo': 'Tireur de Numéros',
+        'labelNumero1': 'Numéro 1 :',
+        'labelNumero2': 'Numéro 2 :',
+        'labelQuantidade': 'Quantité de Numéros à Tirer :',
+        'placeholderNumero1': 'Entrez le premier numéro',
+        'placeholderNumero2': 'Entrez le deuxième numéro',
+        'placeholderQuantidade': 'Entrez le nombre de numéros à tirer',
+        'ordenação': 'Tri',
+        'Crescente': 'Croissant',
+        'Decrescente': 'Décroissant',
+        'permitirRepetidos': 'Autoriser les numéros répétés',
+        'sortearNumeros': 'Tirer le(s) numéro(s)',
+        'limparResultados': 'Effacer le résultat',
+        'reiniciar': 'Redémarrer',
+        'exportarHistoricos': 'Exporter l\'historique',
+        'english': 'Anglais',
+        'portugues': 'Portugais',
+        'francais': 'Français',
     }
 };
 

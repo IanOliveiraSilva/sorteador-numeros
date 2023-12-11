@@ -62,14 +62,16 @@ function atualizarHistorico(resultado) {
         icon.classList.add('icon');
         icon.innerHTML = '<i class="bi bi-check-circle-fill"></i>';
 
+        let opcoesDataHora = { hour: 'numeric', minute: 'numeric', day: 'numeric', month: 'numeric', year: 'numeric' };
+        let dataHora = new Date().toLocaleString(undefined, opcoesDataHora);
+
         let historicoText = document.createElement('p');
-        historicoText.innerHTML = `${icon.outerHTML} Sorteio anterior: ${numerosSorteados[i]}`;
+        historicoText.innerHTML = `${icon.outerHTML} Sorteio anterior (${dataHora}): ${numerosSorteados[i]}`;
 
         historicoCard.appendChild(historicoText);
         historico.appendChild(historicoCard);
     }
 }
-
 
 function reiniciar() {
     document.getElementById('numero1').value = 1;
@@ -81,6 +83,7 @@ function reiniciar() {
     document.getElementById('result').innerText = '';
 
     document.getElementById('historico').innerHTML = '';
+
 }
 
 function mudarIdioma(idioma) {
